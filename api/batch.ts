@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { fetchInstagramVideo } from "../server/utils/fetcher";
+import { fetchInstagramVideo } from "./_fetcher";
 
 dotenv.config();
 
