@@ -1,5 +1,5 @@
 {
-  "name": "reels-installer",
+  "name": "reelsdownloader",
   "version": "1.0.0",
   "description": "Download Instagram Reels using a link",
   "main": "dist/server/index.js",
@@ -7,6 +7,7 @@
     "build:client": "esbuild src/main.ts --bundle --outfile=public/bundle.js --platform=browser",
     "build:server": "tsc -p tsconfig.server.json",
     "build": "npm run build:client && npm run build:server",
+    "vercel-build": "npm run build:client",
     "dev:client": "esbuild src/main.ts --bundle --outfile=public/bundle.js --platform=browser --watch",
     "dev:server": "ts-node-dev --respawn --transpile-only --project tsconfig.server.json server/index.ts",
     "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
