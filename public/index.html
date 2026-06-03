@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReelsDownloader — Unduh Instagram Reels</title>
+  <meta name="description" content="Unduh video Instagram Reels dengan mudah dan cepat hanya menggunakan link. Gratis, tanpa login." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <!-- ── Header ── -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <span class="logo-text">Reels<span class="logo-accent">Downloader</span></span>
+      </div>
+      <div class="header-badge">Gratis &amp; Tanpa Login</div>
+    </header>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="hero-tag">✨ Instagram Reels Downloader</div>
+      <h1 class="hero-title">Unduh Reels<br /><span class="gradient-text">Dalam Satu Klik</span></h1>
+      <p class="hero-subtitle">Tempelkan link Instagram Reels dan unduh langsung ke perangkat — cepat, gratis, tanpa login.</p>
+    </section>
+
+    <!-- ── Mode Toggle ── -->
+    <div class="mode-toggle" role="tablist">
+      <button id="mode-single" class="mode-btn active" role="tab" aria-selected="true">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Single
+      </button>
+      <button id="mode-batch" class="mode-btn" role="tab" aria-selected="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Batch
+      </button>
+    </div>
+
+    <!-- ── Single Panel ── -->
+    <section id="single-panel" class="card input-card">
+      <label class="input-label" for="url-input">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Link Instagram Reels
+      </label>
+      <div class="input-row">
+        <input id="url-input" type="url" class="url-input" placeholder="https://www.instagram.com/reel/..." autocomplete="off" spellcheck="false" />
+        <button id="paste-btn" class="paste-btn" title="Tempel dari clipboard">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+          Tempel
+        </button>
+      </div>
+      <button id="download-btn" class="download-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Unduh Reels
+      </button>
+    </section>
+
+    <!-- ── Batch Panel ── -->
+    <section id="batch-panel" class="card input-card hidden">
+      <div class="batch-header">
+        <label class="input-label" for="batch-textarea">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Paste Link (satu per baris, maks. 20)
+        </label>
+        <span id="url-count" class="url-counter">0/20 link</span>
+      </div>
+      <textarea
+        id="batch-textarea"
+        class="batch-textarea"
+        placeholder="https://www.instagram.com/reel/ABC123/&#10;https://www.instagram.com/reel/DEF456/&#10;https://www.instagram.com/reel/GHI789/"
+        rows="6"
+        spellcheck="false"
+      ></textarea>
+      <div class="batch-actions">
+        <button id="add-url-btn" class="add-url-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Tambah Baris
+        </button>
+        <button id="batch-download-btn" class="download-btn batch-submit-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Proses Semua Link
+        </button>
+      </div>
+    </section>
+
+    <!-- ── Loading Status ── -->
+    <section id="status-section" class="card status-card hidden" aria-live="polite">
+      <div class="status-animation">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring pulse-ring--delay"></div>
+        <svg class="status-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <p class="status-text">Mengambil informasi video...</p>
+      <p class="status-sub">Mohon tunggu sebentar</p>
+    </section>
+
+    <!-- ── Single Result ── -->
+    <section id="result-section" class="card result-card hidden">
+      <div class="result-header"><span class="result-badge">✅ Video Ditemukan</span></div>
+      <div id="result-preview" class="hidden"></div>
+      <p id="result-caption" class="result-caption"></p>
+      <a id="result-download" href="#" class="save-btn">⬇️ Simpan Video</a>
+    </section>
+
+    <!-- ── Batch Results ── -->
+    <section id="batch-results-section" class="card hidden">
+      <div class="batch-results-header">
+        <div id="batch-summary" class="batch-summary"></div>
+        <button id="batch-download-all" class="save-btn batch-dl-all hidden">⬇️ Unduh Semua</button>
+      </div>
+      <div id="batch-results-list" class="batch-results-list"></div>
+    </section>
+
+    <!-- ── Error ── -->
+    <section id="error-section" class="card error-card hidden" aria-live="assertive">
+      <div class="error-icon">⚠️</div>
+      <p id="error-message" class="error-message"></p>
+    </section>
+
+
+
+    <footer class="footer">
+      <p>Hanya untuk keperluan pribadi &amp; edukasi. Hormati hak cipta pembuat konten.</p>
+    </footer>
+  </div>
+
+  <!-- ── Video Modal ── -->
+  <div id="video-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Video Player">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span id="modal-caption" class="modal-caption"></span>
+        <button id="modal-close" class="modal-close" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <video id="modal-video" class="modal-video" controls playsinline preload="auto"></video>
+    </div>
+  </div>
+
+  <script src="bundle.js" defer></script>
+</body>
+</html>
